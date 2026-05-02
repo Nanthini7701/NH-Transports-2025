@@ -6,7 +6,10 @@ from .models import ContactSubmission, Testimonial
 
 def home(request):
     """Home page view"""
-    testimonials = Testimonial.objects.all()[:6]
+    try:
+        testimonials = Testimonial.objects.all()[:6]
+    except:
+        testimonials = []
     context = {
         'testimonials': testimonials,
         'page_title': 'Home'
