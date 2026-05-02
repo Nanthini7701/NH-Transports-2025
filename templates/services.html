@@ -1,0 +1,242 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Services - NH Transports{% endblock %}
+
+{% block content %}
+<!-- Page Header -->
+<section class="page-header bg-primary text-white py-5">
+    <div class="container">
+        <h1 class="page-title">Our Services</h1>
+        <p class="page-subtitle">Comprehensive Transport and Logistics Solutions</p>
+    </div>
+</section>
+
+<!-- Main Services Section -->
+<section class="py-5">
+    <div class="container">
+        <div class="section-title text-center mb-5">
+            <h2>What We Offer</h2>
+            <p class="text-muted">Complete range of transport and logistics services tailored to your needs</p>
+        </div>
+
+        <div class="row">
+            <!-- Local Transport -->
+            <div class="col-lg-6 mb-5">
+                <div class="service-detail-card">
+                    <div class="service-detail-icon">
+                        <i class="fas fa-van-shuttle"></i>
+                    </div>
+                    <h3>Local Transport</h3>
+                    <p>Quick and efficient delivery within city limits. Perfect for businesses needing day-to-day logistics.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Same-day delivery available</li>
+                        <li><i class="fas fa-check"></i> Real-time tracking</li>
+                        <li><i class="fas fa-check"></i> Professional drivers</li>
+                        <li><i class="fas fa-check"></i> Competitive pricing</li>
+                    </ul>
+                    <a href="{% url 'contact' %}" class="btn btn-primary btn-sm mt-3">Get Quote</a>
+                </div>
+            </div>
+
+            <!-- Interstate Transport -->
+            <div class="col-lg-6 mb-5">
+                <div class="service-detail-card">
+                    <div class="service-detail-icon">
+                        <i class="fas fa-route"></i>
+                    </div>
+                    <h3>Interstate Transport</h3>
+                    <p>Long-distance cargo delivery across states with guaranteed safety and timely arrival.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Pan-India coverage</li>
+                        <li><i class="fas fa-check"></i> Full cargo insurance</li>
+                        <li><i class="fas fa-check"></i> GPS tracking</li>
+                        <li><i class="fas fa-check"></i> 99.8% on-time rate</li>
+                    </ul>
+                    <a href="{% url 'contact' %}" class="btn btn-primary btn-sm mt-3">Get Quote</a>
+                </div>
+            </div>
+
+            <!-- Heavy Equipment Transport -->
+            <div class="col-lg-6 mb-5">
+                <div class="service-detail-card">
+                    <div class="service-detail-icon">
+                        <i class="fas fa-industry"></i>
+                    </div>
+                    <h3>Heavy Equipment Transport</h3>
+                    <p>Specialized transport for heavy machinery, industrial equipment, and oversized cargo.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Specialized trailers</li>
+                        <li><i class="fas fa-check"></i> Expert crew</li>
+                        <li><i class="fas fa-check"></i> Route planning</li>
+                        <li><i class="fas fa-check"></i> Premium insurance</li>
+                    </ul>
+                    <a href="{% url 'contact' %}" class="btn btn-primary btn-sm mt-3">Get Quote</a>
+                </div>
+            </div>
+
+            <!-- Cargo Management -->
+            <div class="col-lg-6 mb-5">
+                <div class="service-detail-card">
+                    <div class="service-detail-icon">
+                        <i class="fas fa-boxes"></i>
+                    </div>
+                    <h3>Cargo Management</h3>
+                    <p>Complete handling, packing, and storage solutions for your valuable goods.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Professional packing</li>
+                        <li><i class="fas fa-check"></i> Climate controlled storage</li>
+                        <li><i class="fas fa-check"></i> Inventory management</li>
+                        <li><i class="fas fa-check"></i> Documentation support</li>
+                    </ul>
+                    <a href="{% url 'contact' %}" class="btn btn-primary btn-sm mt-3">Get Quote</a>
+                </div>
+            </div>
+
+            <!-- Climate Controlled Transport -->
+            <div class="col-lg-6 mb-5">
+                <div class="service-detail-card">
+                    <div class="service-detail-icon">
+                        <i class="fas fa-snowflake"></i>
+                    </div>
+                    <h3>Climate Controlled Transport</h3>
+                    <p>Temperature-controlled vehicles for sensitive goods like pharmaceuticals and perishables.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Temperature regulation</li>
+                        <li><i class="fas fa-check"></i> Humidity control</li>
+                        <li><i class="fas fa-check"></i> 24/7 monitoring</li>
+                        <li><i class="fas fa-check"></i> Compliance certified</li>
+                    </ul>
+                    <a href="{% url 'contact' %}" class="btn btn-primary btn-sm mt-3">Get Quote</a>
+                </div>
+            </div>
+
+            <!-- 24/7 Support -->
+            <div class="col-lg-6 mb-5">
+                <div class="service-detail-card">
+                    <div class="service-detail-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>24/7 Customer Support</h3>
+                    <p>Round-the-clock assistance for all your transport and logistics needs.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Toll-free helpline</li>
+                        <li><i class="fas fa-check"></i> Email support</li>
+                        <li><i class="fas fa-check"></i> WhatsApp messaging</li>
+                        <li><i class="fas fa-check"></i> Quick response time</li>
+                    </ul>
+                    <a href="{% url 'contact' %}" class="btn btn-primary btn-sm mt-3">Contact Now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Process Section -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="section-title text-center mb-5">
+            <h2>How We Work</h2>
+            <p class="text-muted">Simple and transparent process</p>
+        </div>
+
+        <div class="row">
+            <div class="col-md-3 mb-4">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h5>Get Quote</h5>
+                    <p>Contact us with your requirements and get a free, no-obligation quote.</p>
+                </div>
+            </div>
+
+            <div class="col-md-3 mb-4">
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h5>Book Service</h5>
+                    <p>Confirm your booking with our flexible scheduling options.</p>
+                </div>
+            </div>
+
+            <div class="col-md-3 mb-4">
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h5>Track Shipment</h5>
+                    <p>Monitor your cargo in real-time with GPS tracking.</p>
+                </div>
+            </div>
+
+            <div class="col-md-3 mb-4">
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h5>Delivery & Receipt</h5>
+                    <p>Safe delivery with proper documentation and receipt at destination.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Fleet Section -->
+<section class="py-5">
+    <div class="container">
+        <div class="section-title text-center mb-5">
+            <h2>Our Fleet</h2>
+            <p class="text-muted">Modern and well-maintained vehicles for all transport needs</p>
+        </div>
+
+        <div class="row">
+            <div class="col-md-3 mb-4">
+                <div class="fleet-item">
+                    <div class="fleet-icon">
+                        <i class="fas fa-truck-pickup"></i>
+                    </div>
+                    <h5>Pickup Vans</h5>
+                    <p>100+ vans for small deliveries and local transport.</p>
+                </div>
+            </div>
+
+            <div class="col-md-3 mb-4">
+                <div class="fleet-item">
+                    <div class="fleet-icon">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <h5>Delivery Trucks</h5>
+                    <p>75+ medium trucks for inter-city cargo transport.</p>
+                </div>
+            </div>
+
+            <div class="col-md-3 mb-4">
+                <div class="fleet-item">
+                    <div class="fleet-icon">
+                        <i class="fas fa-truck-moving"></i>
+                    </div>
+                    <h5>Trailers</h5>
+                    <p>20+ high-capacity trailers for heavy loads.</p>
+                </div>
+            </div>
+
+            <div class="col-md-3 mb-4">
+                <div class="fleet-item">
+                    <div class="fleet-icon">
+                        <i class="fas fa-snowflake"></i>
+                    </div>
+                    <h5>Refrigerated Units</h5>
+                    <p>5+ climate-controlled vehicles for sensitive goods.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta-section py-5 bg-primary text-white">
+    <div class="container text-center">
+        <h2>Need Transport Services?</h2>
+        <p class="lead mb-4">Get in touch with us today for a free quote</p>
+        <a href="{% url 'contact' %}" class="btn btn-light btn-lg btn-hover">
+            <i class="fas fa-phone"></i> Request Quote
+        </a>
+    </div>
+</section>
+
+{% endblock %}

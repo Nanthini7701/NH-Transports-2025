@@ -1,0 +1,228 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}NH Transports{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero-section" style="background-image: url('{% static 'images/hero.png' %}'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+    <div class="hero-overlay">
+        <div class="container">
+            <div class="row justify-content-center text-center min-vh-100 align-items-center">
+                <div class="col-lg-8">
+                    <h1 class="hero-title">Modern Transport, Trusted Logistics</h1>
+                    <p class="hero-subtitle">Launched in 2025 with premium cargo care across India</p>
+                    <p class="hero-description">From Eraiyur, Pennadam, Cuddalore, we deliver quality transport services that blend speed, safety, and clarity for every shipment.</p>
+                    <div class="hero-buttons">
+                        <a href="{% url 'contact' %}" class="btn btn-primary btn-lg me-3 btn-hover">
+                            <i class="fas fa-phone"></i> Get Quote
+                        </a>
+                        <a href="{% url 'services' %}" class="btn btn-outline-light btn-lg btn-hover">
+                            <i class="fas fa-info-circle"></i> Learn More
+                        </a>
+                    </div>
+                    <div class="hero-contact-strip mt-4 d-flex flex-column flex-sm-row gap-3 justify-content-center align-items-center">
+                        <span class="contact-pill"><i class="fas fa-phone-alt"></i> +91 8971604701</span>
+                        <span class="contact-pill"><i class="fas fa-envelope"></i> nhtransports2025@gmail.com</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Why Choose Us Section -->
+<section class="why-choose-us py-5 bg-light">
+    <div class="container">
+        <div class="section-title text-center mb-5">
+            <h2>Why Choose NH Transports?</h2>
+            <p class="text-muted">We offer industry-leading solutions with proven track record</p>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="feature-card h-100">
+                    <div class="feature-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h5>On-Time Delivery</h5>
+                    <p>We guarantee 99.8% on-time delivery rate with real-time tracking for all shipments.</p>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="feature-card h-100">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h5>Fully Insured</h5>
+                    <p>Complete cargo insurance coverage gives you peace of mind during transit.</p>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="feature-card h-100">
+                    <div class="feature-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h5>Expert Team</h5>
+                    <p>Experienced drivers and logistics professionals ensuring quality service.</p>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="feature-card h-100">
+                    <div class="feature-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h5>24/7 Support</h5>
+                    <p>Round-the-clock customer support to address your queries anytime.</p>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="feature-card h-100">
+                    <div class="feature-icon">
+                        <i class="fas fa-map-marked-alt"></i>
+                    </div>
+                    <h5>Pan-India Coverage</h5>
+                    <p>We operate across all major cities and remote locations nationwide.</p>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="feature-card h-100">
+                    <div class="feature-icon">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <h5>Competitive Pricing</h5>
+                    <p>Best rates in the industry with transparent pricing and no hidden charges.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Services Preview Section -->
+<section class="services-preview py-5">
+    <div class="container">
+        <div class="section-title text-center mb-5">
+            <h2>Our Services</h2>
+            <p class="text-muted">Comprehensive transport and logistics solutions</p>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6 mb-4">
+                <div class="service-item">
+                    <i class="fas fa-van-shuttle"></i>
+                    <h5>Local Transport</h5>
+                    <p>Quick and efficient local delivery services within city limits.</p>
+                </div>
+            </div>
+
+            <div class="col-md-6 mb-4">
+                <div class="service-item">
+                    <i class="fas fa-route"></i>
+                    <h5>Interstate Transport</h5>
+                    <p>Long-distance safe and timely cargo delivery across states.</p>
+                </div>
+            </div>
+
+            <div class="col-md-6 mb-4">
+                <div class="service-item">
+                    <i class="fas fa-industry"></i>
+                    <h5>Heavy Equipment</h5>
+                    <p>Specialized transport for heavy machinery and industrial equipment.</p>
+                </div>
+            </div>
+
+            <div class="col-md-6 mb-4">
+                <div class="service-item">
+                    <i class="fas fa-boxes"></i>
+                    <h5>Cargo Management</h5>
+                    <p>Complete handling, packing, and storage for your valuable goods.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center mt-4">
+            <a href="{% url 'services' %}" class="btn btn-primary btn-lg btn-hover">
+                View All Services <i class="fas fa-arrow-right ms-2"></i>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Statistics Section -->
+<section class="statistics py-5 bg-primary text-white">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-md-3 mb-4">
+                <div class="stat-item">
+                    <h2 class="stat-number">15+</h2>
+                    <p class="stat-label">Years Experience</p>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="stat-item">
+                    <h2 class="stat-number">50K+</h2>
+                    <p class="stat-label">Shipments Delivered</p>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="stat-item">
+                    <h2 class="stat-number">500+</h2>
+                    <p class="stat-label">Happy Clients</p>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="stat-item">
+                    <h2 class="stat-number">99.8%</h2>
+                    <p class="stat-label">On-Time Rate</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Testimonials Section -->
+<section class="testimonials py-5 bg-light">
+    <div class="container">
+        <div class="section-title text-center mb-5">
+            <h2>What Our Clients Say</h2>
+            <p class="text-muted">Real testimonials from satisfied customers</p>
+        </div>
+
+        <div class="row">
+            {% for testimonial in testimonials %}
+            <div class="col-md-4 mb-4">
+                <div class="testimonial-card">
+                    <div class="testimonial-stars mb-2">
+                        {% for i in "x"|rjust:testimonial.rating %}
+                            <i class="fas fa-star"></i>
+                        {% endfor %}
+                    </div>
+                    <p class="testimonial-text">"{{ testimonial.message }}"</p>
+                    <h6 class="testimonial-author">{{ testimonial.name }}</h6>
+                    {% if testimonial.company %}
+                        <p class="testimonial-company">{{ testimonial.company }}</p>
+                    {% endif %}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta-section py-5 bg-primary text-white">
+    <div class="container text-center">
+        <h2>Ready to Move Your Cargo?</h2>
+        <p class="lead mb-4">Get a quote today and experience professional transport services</p>
+        <a href="{% url 'contact' %}" class="btn btn-light btn-lg btn-hover">
+            <i class="fas fa-phone"></i> Contact Now
+        </a>
+    </div>
+</section>
+
+{% endblock %}

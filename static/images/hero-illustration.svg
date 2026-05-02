@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" fill="none">
+  <defs>
+    <linearGradient id="a" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#003d82"/>
+      <stop offset="100%" stop-color="#5aa3d8"/>
+    </linearGradient>
+    <linearGradient id="b" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f39c12"/>
+      <stop offset="100%" stop-color="#ffb456"/>
+    </linearGradient>
+  </defs>
+  <rect x="0" y="0" width="800" height="600" rx="40" fill="#edf5fd"/>
+  <path d="M120 420H680V470H120V420Z" fill="#d9e9f7"/>
+  <rect x="130" y="300" width="520" height="120" rx="24" fill="url(#a)" opacity="0.95"/>
+  <path d="M200 220H260V300H200V220Z" fill="#fff"/>
+  <path d="M290 200H520V310H290V200Z" fill="#fff"/>
+  <circle cx="520" cy="340" r="40" fill="#003d82"/>
+  <circle cx="220" cy="340" r="40" fill="#003d82"/>
+  <path d="M240 300H320V310H240V300Z" fill="#003d82"/>
+  <path d="M380 280H560V290H380V280Z" fill="#003d82"/>
+  <rect x="330" y="150" width="160" height="80" rx="20" fill="url(#b)" opacity="0.9"/>
+  <path d="M320 155L340 130H430L450 155H320Z" fill="#fff" opacity="0.7"/>
+  <path d="M132 120C185 80 295 80 345 120" stroke="#5aa3d8" stroke-width="18" stroke-linecap="round"/>
+  <path d="M560 120C615 90 700 90 760 130" stroke="#f39c12" stroke-width="18" stroke-linecap="round" opacity="0.85"/>
+  <circle cx="180" cy="120" r="28" fill="#5aa3d8" opacity="0.85"/>
+  <circle cx="720" cy="145" r="24" fill="#f39c12" opacity="0.9"/>
+  <text x="140" y="525" fill="#003d82" font-size="36" font-weight="700">NH Transports</text>
+</svg>
