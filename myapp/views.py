@@ -9,7 +9,7 @@ def home(request):
     """Home page view"""
     testimonials = []
     try:
-        testimonials = Testimonial.objects.all()[:6]
+        testimonials = list(Testimonial.objects.all()[:6])
     except OperationalError:
         # Database tables not yet created - display page without testimonials
         testimonials = []
