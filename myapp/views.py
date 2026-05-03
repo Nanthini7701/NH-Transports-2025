@@ -1,15 +1,22 @@
 from django.shortcuts import render, redirect
 from django.views.decorators.http import require_http_methods
 from django.contrib import messages
+from django.db import OperationalError
 from .models import ContactSubmission, Testimonial
 
 
 def home(request):
     """Home page view"""
+    testimonials = []
     try:
         testimonials = Testimonial.objects.all()[:6]
-    except:
+    except OperationalError:
+        # Database tables not yet created - display page without testimonials
         testimonials = []
+    except Exception:
+        # Any other database error
+        testimonials = []
+    
     context = {
         'testimonials': testimonials,
         'page_title': 'Home'
@@ -78,15 +85,20 @@ def contact(request):
         
         # Validate form data
         if name and phone and pickup_location and drop_location and message:
-            # Create contact submission
-            ContactSubmission.objects.create(
-                name=name,
-                phone=phone,
-                pickup_location=pickup_location,
-                drop_location=drop_location,
-                message=message
-            )
-            messages.success(request, 'Thank you! We will contact you shortly.')
+            try:
+                # Create contact submission
+                ContactSubmission.objects.create(
+                    name=name,
+                    phone=phone,
+                    pickup_location=pickup_location,
+                    drop_location=drop_location,
+                    message=message
+                )
+                messages.success(request, 'Thank you! We will contact you shortly.')
+            except OperationalError:
+                messages.error(request, 'Database is initializing. Please try again in a moment.')
+            except Exception as e:
+                messages.error(request, 'An error occurred while submitting the form. Please try again.')
             return redirect('contact')
         else:
             messages.error(request, 'Please fill all required fields.')
