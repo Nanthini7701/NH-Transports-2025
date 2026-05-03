@@ -199,9 +199,9 @@
             <div class="col-md-4 mb-4">
                 <div class="testimonial-card">
                     <div class="testimonial-stars mb-2">
-                        {% for i in "x"|rjust:testimonial.rating %}
-                            <i class="fas fa-star"></i>
-                        {% endfor %}
+                        {% with full_stars="★★★★★" %}
+                            {{ full_stars|slice:":testimonial.rating" }}
+                        {% endwith %}
                     </div>
                     <p class="testimonial-text">"{{ testimonial.message }}"</p>
                     <h6 class="testimonial-author">{{ testimonial.name }}</h6>
