@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.views.decorators.http import require_http_methods
 from django.contrib import messages
-from django.db import OperationalError
+from django.db import OperationalError, connection
 from .models import ContactSubmission, Testimonial
 
 
@@ -9,7 +9,9 @@ def home(request):
     """Home page view"""
     testimonials = []
     try:
-        testimonials = list(Testimonial.objects.all()[:6])
+        table_names = connection.introspection.table_names()
+        if 'myapp_testimonial' in table_names:
+            testimonials = list(Testimonial.objects.all()[:6])
     except OperationalError:
         # Database tables not yet created - display page without testimonials
         testimonials = []
