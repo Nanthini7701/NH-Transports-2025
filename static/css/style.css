@@ -891,8 +891,32 @@ body {
     align-items: center;
     justify-content: center;
     min-height: 250px;
+    padding: 1rem;
 }
 
+.member-image1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 250px;
+    padding: 1rem;
+}
+.member-image img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid rgba(255, 255, 255, 0.9);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+.member-image1 img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid rgba(255, 255, 255, 0.9);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
 .achievement-item {
     background: white;
     padding: 1.5rem;
