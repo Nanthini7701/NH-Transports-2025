@@ -15,12 +15,14 @@ SECRET_KEY = os.getenv('DJANGO_SECRET_KEY', 'django-insecure-your-secret-key-cha
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["*", "nhtransports-2025.up.railway.app", "nh-transports-2025-production.up.railway.app",
+ALLOWED_HOSTS = ["*",  "nh-transports-2025-production.up.railway.app",
+    "nh-transports2025.up.railway.app",
     "localhost",
     "127.0.0.1",]
 
 CSRF_TRUSTED_ORIGINS = [
-    "https://nhtransports-2025.up.railway.app", "nh-transports-2025-production.up.railway.app",
+      "https://nh-transports-2025-production.up.railway.app",
+    "https://nh-transports2025.up.railway.app",
 ]
 # Application definition
 
