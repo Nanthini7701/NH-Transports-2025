@@ -103,13 +103,12 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_TIMEOUT = 30
 
-EMAIL_HOST_USER = os.getenv("nhtransports2025@gmail.com")
-EMAIL_HOST_PASSWORD = os.getenv("geuf bkzr jgjh rfwz")
+EMAIL_HOST_USER = os.getenv("EMAIL_HOST_USER", "nhtransports2025@gmail.com")
+EMAIL_HOST_PASSWORD = os.getenv("EMAIL_HOST_PASSWORD", "geuf bkzr jgjh rfwz")
 
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
-CONTACT_RECEIVER_EMAIL = os.getenv(
-    "CONTACT_RECEIVER_EMAIL",
-    "nhtransports2025@gmail.com"
-)
+CONTACT_RECEIVER_EMAIL = "nhtransports2025@gmail.com"
+
+
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
