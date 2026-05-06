@@ -13,16 +13,18 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv('DJANGO_SECRET_KEY', 'django-insecure-your-secret-key-change-in-production-99999999999999999999')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ["*",  "nh-transports-2025-production.up.railway.app",
+ALLOWED_HOSTS = ["*",   "nhtransports-2025.up.railway.app",
     "nh-transports2025.up.railway.app",
+    "nh-transports-2025-production.up.railway.app",
     "localhost",
     "127.0.0.1",]
 
 CSRF_TRUSTED_ORIGINS = [
-      "https://nh-transports-2025-production.up.railway.app",
+     "https://nhtransports-2025.up.railway.app",
     "https://nh-transports2025.up.railway.app",
+    "https://nh-transports-2025-production.up.railway.app",
 ]
 # Application definition
 
