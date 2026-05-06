@@ -3,6 +3,9 @@ from django.views.decorators.http import require_http_methods
 from django.contrib import messages
 from django.db import OperationalError, connection
 from .models import ContactSubmission, Testimonial
+from django.core.mail import send_mail
+from django.conf import settings
+
 
 
 def home(request):
@@ -77,35 +80,40 @@ def services(request):
 
 
 def contact(request):
-    """Contact page view - handles both GET and POST"""
-    if request.method == 'POST':
-        name = request.POST.get('name', '')
-        phone = request.POST.get('phone', '')
-        pickup_location = request.POST.get('pickup_location', '')
-        drop_location = request.POST.get('drop_location', '')
-        message = request.POST.get('message', '')
-        
-        # Validate form data
-        if name and phone and pickup_location and drop_location and message:
-            try:
-                # Create contact submission
-                ContactSubmission.objects.create(
-                    name=name,
-                    phone=phone,
-                    pickup_location=pickup_location,
-                    drop_location=drop_location,
-                    message=message
-                )
-                messages.success(request, 'Thank you! We will contact you shortly.')
-            except OperationalError:
-                messages.error(request, 'Database is initializing. Please try again in a moment.')
-            except Exception as e:
-                messages.error(request, 'An error occurred while submitting the form. Please try again.')
-            return redirect('contact')
-        else:
-            messages.error(request, 'Please fill all required fields.')
-    
-    context = {
-        'page_title': 'Contact Us'
-    }
-    return render(request, 'contact.html', context)
+    if request.method == "POST":
+        name = request.POST.get("name")
+        phone = request.POST.get("phone")
+        pickup_location = request.POST.get("pickup_location")
+        drop_location = request.POST.get("drop_location")
+        message = request.POST.get("message")
+
+        subject = f"New Contact Message from {name}"
+
+        email_message = f"""
+New enquiry from NH Transports website
+
+Name: {name}
+Phone: {phone}
+Pickup Location: {pickup_location}
+Drop Location: {drop_location}
+
+Message:
+{message}
+"""
+
+        try:
+            send_mail(
+                subject,
+                email_message,
+                settings.DEFAULT_FROM_EMAIL,
+                [settings.CONTACT_RECEIVER_EMAIL],
+                fail_silently=False,
+            )
+            messages.success(request, "Your message has been sent successfully!")
+            return redirect("contact")
+
+        except Exception as e:
+            messages.error(request, "Message sending failed. Please try again.")
+            print("Email error:", e)
+
+    return render(request, "contact.html")

@@ -64,6 +64,13 @@
     </div>
 </section>
 
+{% if messages %}
+    {% for message in messages %}
+        <div class="alert alert-{{ message.tags }} text-center">
+            {{ message }}
+        </div>
+    {% endfor %}
+{% endif %}
 <!-- Contact Form Section -->
 <section class="py-5">
     <div class="container">
