@@ -86,16 +86,16 @@ def contact(request):
         phone = request.POST.get("phone", "").strip()
         pickup_location = request.POST.get("pickup_location", "").strip()
         drop_location = request.POST.get("drop_location", "").strip()
-        message = request.POST.get("message", "").strip()
+        user_message = request.POST.get("message", "").strip()
 
-        if not name or not phone or not pickup_location or not drop_location or not message:
+        if not name or not phone or not pickup_location or not drop_location or not user_message:
             messages.error(request, "Please fill all required fields.")
             return redirect("contact")
 
-        subject = f"New Enquiry from NH Transports - {name}"
+        subject = f"New Contact Enquiry - {name}"
 
         body = f"""
-New message from NH Transports website
+New enquiry from NH Transports website
 
 Name: {name}
 Phone: {phone}
@@ -103,7 +103,7 @@ Pickup Location: {pickup_location}
 Drop Location: {drop_location}
 
 Message:
-{message}
+{user_message}
 """
 
         try:
@@ -120,8 +120,8 @@ Message:
             return redirect("contact")
 
         except Exception as e:
-            print("EMAIL SENDING ERROR:", e)
-            messages.error(request, "Message not sent. Please check Gmail app password or Railway email variables.")
+            print("EMAIL ERROR:", e)
+            messages.error(request, "Message not sent. Please check Railway email variables.")
             return redirect("contact")
 
     return render(request, "contact.html")
