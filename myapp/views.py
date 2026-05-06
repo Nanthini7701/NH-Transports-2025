@@ -4,6 +4,7 @@ from django.contrib import messages
 from django.db import OperationalError, connection
 from .models import ContactSubmission, Testimonial
 from django.core.mail import send_mail
+from django.core.mail import EmailMessage
 from django.conf import settings
 
 
@@ -81,16 +82,20 @@ def services(request):
 
 def contact(request):
     if request.method == "POST":
-        name = request.POST.get("name")
-        phone = request.POST.get("phone")
-        pickup_location = request.POST.get("pickup_location")
-        drop_location = request.POST.get("drop_location")
-        message = request.POST.get("message")
+        name = request.POST.get("name", "").strip()
+        phone = request.POST.get("phone", "").strip()
+        pickup_location = request.POST.get("pickup_location", "").strip()
+        drop_location = request.POST.get("drop_location", "").strip()
+        message = request.POST.get("message", "").strip()
 
-        subject = f"New Contact Message from {name}"
+        if not name or not phone or not pickup_location or not drop_location or not message:
+            messages.error(request, "Please fill all required fields.")
+            return redirect("contact")
 
-        email_message = f"""
-New enquiry from NH Transports website
+        subject = f"New Enquiry from NH Transports - {name}"
+
+        body = f"""
+New message from NH Transports website
 
 Name: {name}
 Phone: {phone}
@@ -102,18 +107,21 @@ Message:
 """
 
         try:
-            send_mail(
-                subject,
-                email_message,
-                settings.DEFAULT_FROM_EMAIL,
-                [settings.CONTACT_RECEIVER_EMAIL],
-                fail_silently=False,
+            email = EmailMessage(
+                subject=subject,
+                body=body,
+                from_email=settings.DEFAULT_FROM_EMAIL,
+                to=[settings.CONTACT_RECEIVER_EMAIL],
+                reply_to=[settings.EMAIL_HOST_USER],
             )
-            messages.success(request, "Your message has been sent successfully!")
+            email.send(fail_silently=False)
+
+            messages.success(request, "Message sent successfully!")
             return redirect("contact")
 
         except Exception as e:
-            messages.error(request, "Message sending failed. Please try again.")
-            print("Email error:", e)
+            print("EMAIL SENDING ERROR:", e)
+            messages.error(request, "Message not sent. Please check Gmail app password or Railway email variables.")
+            return redirect("contact")
 
     return render(request, "contact.html")
