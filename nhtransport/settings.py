@@ -13,18 +13,19 @@ SECRET_KEY = os.getenv(
     "django-insecure-change-this-secret-key"
 )
 
-DEBUG = os.getenv("DEBUG", "False") == "True"
+DEBUG = True
 
-ALLOWED_HOSTS = [
+ALLOWED_HOSTS = [ "*",
     "nhtransports-2025.up.railway.app",
     "nh-transports2025.up.railway.app",
     "nh-transports-2025-production.up.railway.app",
     "localhost",
     "127.0.0.1","pnanthini.pythonanywhere.com",
+    "www.pnanthini.pythonanywhere.com",
 ]
 
 CSRF_TRUSTED_ORIGINS = [
-    "https://nhtransports-2025.up.railway.app","pnanthini.pythonanywhere.com",
+    "https://nhtransports-2025.up.railway.app","https://pnanthini.pythonanywhere.com",
     "https://nh-transports2025.up.railway.app",
     "https://nh-transports-2025-production.up.railway.app",
 ]
