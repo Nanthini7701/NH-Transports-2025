@@ -21,11 +21,12 @@ ALLOWED_HOSTS = [ "*",
     "nh-transports-2025-production.up.railway.app",
     "localhost",
     "127.0.0.1","pnanthini.pythonanywhere.com",
-    "www.pnanthini.pythonanywhere.com",
+    "www.pnanthini.pythonanywhere.com","nhtransports2025.pythonanywhere.com",
+    "www.nhtransports2025.pythonanywhere.com",
 ]
 
 CSRF_TRUSTED_ORIGINS = [
-    "https://nhtransports-2025.up.railway.app","https://pnanthini.pythonanywhere.com",
+    "https://nhtransports-2025.up.railway.app","https://pnanthini.pythonanywhere.com","https://nhtransports2025.pythonanywhere.com",
     "https://nh-transports2025.up.railway.app",
     "https://nh-transports-2025-production.up.railway.app",
 ]
