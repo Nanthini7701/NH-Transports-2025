@@ -120,8 +120,8 @@ Message:
             return redirect("contact")
 
         except Exception as e:
-            print("EMAIL ERROR:", e)
-            messages.error(request, "Message not sent. Please check Railway email variables.")
+            print("EMAIL ERROR:", str(e))
+            messages.error(request, f"Message not sent: {str(e)}")
             return redirect("contact")
 
     return render(request, "contact.html")
